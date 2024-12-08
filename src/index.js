@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import RankList from './components/RankList';
+import ResetStyles from './components/ResetStyle';
+import { ThemeProvider } from "@emotion/react";
+import theme from "./styles/theme";
+import GlobalStyle from "./styles/GlobalStyle";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <ResetStyles/>
+      <RankList></RankList>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
